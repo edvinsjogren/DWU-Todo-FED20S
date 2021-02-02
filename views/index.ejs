@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+    
+     <h1>Eddie's Tidy ToDo List</h1>
+
+     <%- include("add-data.ejs") %>
+
+    <a href="/?page=<%=(dataToShow/dataToShowPerReq)%>&&sorted=-1"> Sort A-Z </a>
+    <a href="/?page=<%=(dataToShow/dataToShowPerReq)%>&&sorted=1"> Sort Z-A  </a>
+
+     <% for(let i=0; i<data.length; i++) { %>
+
+     <div>  <%= data[i].name %>
+        <a href="/edit/<%= data[i]._id %>" > Edit </a> 
+        <a href="/delete/<%= data[i]._id %>"> Delete</a> 
+     </div>
+    <% } %>
+
+    <% if(totalDataPart !== dataToShow/dataToShowPerReq) { %>
+    <a href="/?page=<%=(dataToShow/dataToShowPerReq) +1%>"> Show more </a>
+        <% } else { %>
+        <a href="/?page=1"> Show less </a>
+    <% } %>
+</body>
+</html>
