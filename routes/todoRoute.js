@@ -3,7 +3,8 @@ const Todo = require("../model/todo");
 const router = express.Router(); 
 
 router.get("/", async (req, res) => {
-    const sorted = +req.query.sorted || 1;
+    const sortName = +req.query.sortName || 1;
+    const sortDate = +req.query.sortDate || 1;
     const page = +req.query.page || 1;
 
     try {
@@ -11,7 +12,7 @@ router.get("/", async (req, res) => {
         const amountDisplayed = 4;
         const mathCeil = Math.ceil(toDoList/amountDisplayed);
         const displayTodos = amountDisplayed * page;
-        const data = await Todo.find().limit(displayTodos).sort({name: sorted});
+        const data = await Todo.find().limit(displayTodos).sort({name: sortName}, {date: sortDate});
         
         res.render("index.ejs", 
         { 
