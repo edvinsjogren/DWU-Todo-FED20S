@@ -1,5 +1,4 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const User = require("../model/user")
 const router = express.Router();
 
@@ -23,10 +22,10 @@ router.post("/register", async (req, res) => {
         res.render("register.ejs", {errors})
     }
 
-    const newUser =  await new User({
-        name: req.body.name,
-        password: req.body.password
-    }).save()
+    const newUser =  await new User(
+        {name: req.body.name, 
+        password: req.body.password})
+        .save()
 
     res.redirect("/")
 })
