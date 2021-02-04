@@ -10,27 +10,37 @@
     
     <h1>Eddie's Tidy ToDo List</h1>
 
-    <a href="/register">Register here</a>
-    <a href="/login">Login here</a>
+    <div class="subLinks">
+        <a href="/register">Register here</a>
+        <a href="/login">Login here</a>
+    </div>
 
     <%- include("add-data.ejs") %>
 
-    <a href="/?page=<%=(displayTodos/amountDisplayed)%>&&sorted=1"> Sort A-Z </a>
-    <a href="/?page=<%=(displayTodos/amountDisplayed)%>&&sorted=-1"> Sort Z-A </a>
-    <a href="/?page=<%=(displayTodos/amountDisplayed)%>&&sortedDate-1"> Sort Date </a>
+    <div class="orgLinks">
+        <a href="/?page=<%=(displayTodos/amountDisplayed)%>&&sorted=1"> Sort A-Z </a>
+        <a href="/?page=<%=(displayTodos/amountDisplayed)%>&&sorted=-1"> Sort Z-A </a>
+        <a href="/?page=<%=(displayTodos/amountDisplayed)%>&&sortedDate-1"> Sort Date </a>
+        <% if(mathCeil !== displayTodos/amountDisplayed) { %>
+            <a href="/?page=<%=(displayTodos/amountDisplayed)+1%>"> Show more </a>
+            <% } else { %>
+            <a href="/?page=1"> Show less </a>
+        <% } %>
+    </div>
 
+    <div class="listContainer">
      <% for(let i=0; i<data.length; i++) { %>
-        <div>  
-            <%= data[i].name %> <%= data[i].date %>
-            <a href="/edit/<%= data[i]._id %>">Edit</a> 
-            <a href="/delete/<%= data[i]._id %>">Delete</a> 
+        <div class="todoContainer">
+            <div class="todos">  
+                <span class="task"><%= data[i].name %> </span>
+                <span class="date"><%= data[i].date.toString().split(" ").splice(-5, 2) %> </span>
+            </div>
+            <div class="todoButtons">
+                <a href="/edit/<%= data[i]._id %>">Edit</a> 
+                <a href="/delete/<%= data[i]._id %>">Delete</a> 
+            </div>
         </div>
     <% } %>
-
-    <% if(mathCeil !== displayTodos/amountDisplayed) { %>
-        <a href="/?page=<%=(displayTodos/amountDisplayed)+1%>"> Show more </a>
-        <% } else { %>
-        <a href="/?page=1"> Show less </a>
-    <% } %>
+    </div>
 </body>
 </html>

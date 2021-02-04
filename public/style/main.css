@@ -1,3 +1,132 @@
 body {
-    background-color: antiquewhite;
+  background-color: antiquewhite;
+}
+
+h1 {
+  text-align: center;
+}
+
+.subLinks {
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+  background-color: indianred;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+.subLinks a {
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid black;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.subLinks a:hover {
+  background-color: hotpink;
+}
+
+.userInput {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: 5%;
+}
+
+.orgLinks {
+  text-align: center;
+}
+
+.orgLinks a {
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid black;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.orgLinks a:hover {
+  background-color: hotpink;
+}
+
+.listContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.todoContainer {
+  display: flex;
+  background-color: lightcoral;
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  color: black;
+  border-radius: 5px;
+}
+
+.todos {
+  display: flex;
+  margin: 10px;
+  width: 75%;
+  padding: 10px;
+  border: 1px solid black;
+  color: black;
+  border-radius: 5px;
+  background-color: lavenderblush;
+}
+
+.todos a {
+  padding: 5px;
+  border: 1px solid black;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.todos a:hover {
+  background-color: hotpink;
+}
+
+.todoButtons {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+a {
+  background-color: floralwhite;
+  padding: 5px;
+  border: 1px solid black;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.task {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font-size: large;
+    font-weight: bold;
+    width: 100%;
 }

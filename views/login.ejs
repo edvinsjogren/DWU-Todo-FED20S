@@ -1,5 +1,7 @@
 <form action="/login" method="post">
+    <%= errors[0] %>
     <input type="text" name="name">
+    <%= errors[1] %>
     <input type="text" name="password">
     <button type="submit"> Login </button>
 </form>
