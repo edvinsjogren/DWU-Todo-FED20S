@@ -1,13 +1,32 @@
 body {
-  background-color: antiquewhite;
+  background-image: url("../assets/DWU_Todo_BG.jpg");
+  background-repeat: no-repeat, repeat;
+  background-color: #cccccc;
+  height: 100%;
+  width: 100%;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(
+    80deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.1)
+  );
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
 }
 
 h1 {
+  color: white;
   text-align: center;
-}
-
-.subLinks {
-  text-align: center;
+  text-shadow: 1px 1px 3px black;
 }
 
 button {
@@ -22,29 +41,20 @@ form {
   justify-content: center;
 }
 
-.subLinks a {
-  margin: 10px;
-  padding: 5px;
-  border: 1px solid black;
-  text-decoration: none;
-  color: black;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
 .subLinks a:hover {
-  background-color: hotpink;
+  background-color: indianred;
 }
 
 .userInput {
   display: flex;
   text-align: center;
   justify-content: center;
-  margin: 5%;
+  margin: 20px;
 }
 
 .orgLinks {
   text-align: center;
+  margin: 10px;
 }
 
 .orgLinks a {
@@ -58,7 +68,7 @@ form {
 }
 
 .orgLinks a:hover {
-  background-color: hotpink;
+  background-color: indianred;
 }
 
 .listContainer {
@@ -69,7 +79,11 @@ form {
 
 .todoContainer {
   display: flex;
-  background-color: lightcoral;
+  background: linear-gradient(
+    110deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.3)
+  );
   width: 100%;
   margin: 10px;
   padding: 10px;
@@ -86,7 +100,12 @@ form {
   border: 1px solid black;
   color: black;
   border-radius: 5px;
-  background-color: lavenderblush;
+  background: linear-gradient(
+    75deg,
+    rgba(28, 0, 111, 0.1),
+    rgba(49, 1, 62, 0.1)
+  );
+  backdrop-filter: blur(5px);
 }
 
 .todos a {
@@ -100,7 +119,7 @@ form {
 }
 
 .todos a:hover {
-  background-color: hotpink;
+  background-color: indianred;
 }
 
 .todoButtons {
@@ -111,8 +130,16 @@ form {
   margin: auto;
 }
 
+.todoButtons a:hover {
+  background-color: indianred;
+}
+
 a {
-  background-color: floralwhite;
+  background: linear-gradient(
+    150deg,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.6)
+  );
   padding: 5px;
   border: 1px solid black;
   text-decoration: none;
@@ -123,10 +150,31 @@ a {
 }
 
 .task {
-    display: flex;
-    justify-content: center;
-    align-self: center;
-    font-size: large;
-    font-weight: bold;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  font-size: large;
+  font-weight: bold;
+  width: 100%;
+}
+
+#editForm {
+  margin: auto;
+  margin-bottom: 25px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  background: linear-gradient(
+    75deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0)
+  );
+  width: 50%;
+  backdrop-filter: blur(5px);
+}
+
+h3 {
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 3px black;
 }
