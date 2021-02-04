@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FED20S Todolist Edvin Sjögren</title>
     <link rel="stylesheet" href="style/main.css">
 </head>
 <body>
@@ -15,19 +15,20 @@
 
     <%- include("add-data.ejs") %>
 
-    <a href="/?page=<%=(displayTodos/amountDisplayed)%>&&sorted=-1"> Sort A-Z </a>
-    <a href="/?page=<%=(displayTodos/amountDisplayed)%>&&sorted=1"> Sort Z-A  </a>
+    <a href="/?page=<%=(displayTodos/amountDisplayed)%>&&sorted=1"> Sort A-Z </a>
+    <a href="/?page=<%=(displayTodos/amountDisplayed)%>&&sorted=-1"> Sort Z-A </a>
+    <a href="/?page=<%=(displayTodos/amountDisplayed)%>&&sortedDate-1"> Sort Date </a>
 
      <% for(let i=0; i<data.length; i++) { %>
-
-     <div>  <%= data[i].name%>
-        <a href="/edit/<%= data[i]._id %>" > Edit </a> 
-        <a href="/delete/<%= data[i]._id %>"> Delete</a> 
-     </div>
+        <div>  
+            <%= data[i].name %> <%= data[i].date %>
+            <a href="/edit/<%= data[i]._id %>">Edit</a> 
+            <a href="/delete/<%= data[i]._id %>">Delete</a> 
+        </div>
     <% } %>
 
     <% if(mathCeil !== displayTodos/amountDisplayed) { %>
-    <a href="/?page=<%=(displayTodos/amountDisplayed) +1%>"> Show more </a>
+        <a href="/?page=<%=(displayTodos/amountDisplayed)+1%>"> Show more </a>
         <% } else { %>
         <a href="/?page=1"> Show less </a>
     <% } %>
