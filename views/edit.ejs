@@ -1,5 +1,21 @@
-<form action="/edit" method="post">
-    <input type="text" name="name" id="" value="<%= todo.name %>">
-    <input type="text" name="id" value="<%=todo._id %>" hidden>
-    <button type="submit"> Update </button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FED20S Todolist Edvin Sjögren</title>
+    <link rel="stylesheet" href="../style/main.css" />
+  </head>
+  <body>
+    <section class="mainContainer">
+      <h1>Eddie's Tidy ToDo List</h1>
+      <h3>Please update the selected task below:</h3>
+
+      <form id="editForm" action="/edit" method="post">
+        <input type="text" name="name" id="" value="<%= todo.name %>" />
+        <input type="text" name="id" value="<%=todo._id %>" hidden />
+        <button type="submit">Update</button>
+      </form>
+    </section>
+  </body>
+</html>
