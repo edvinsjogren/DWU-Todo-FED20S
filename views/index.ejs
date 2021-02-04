@@ -8,34 +8,34 @@
 </head>
 <body>
     <section class="mainContainer">
-        <h1>Eddie's Tidy ToDo List</h1>
+    <h1>Eddie's Tidy ToDo List</h1>
 
-        <%- include("add-data.ejs") %>
+    <%- include("add-data.ejs") %>
 
-        <div class="orgLinks">
-            <a href="/?page=<%=(displayTodos/amountDisplayed)%>&&sorted=-1"> Sort Date (newest first) </a>
-            <a href="/?page=<%=(displayTodos/amountDisplayed)%>&&sorted=1"> Sort Date (oldest first) </a>
-            <% if(mathCeil !== displayTodos/amountDisplayed) { %>
-                <a href="/?page=<%=(displayTodos/amountDisplayed)+1%>"> Show more </a>
-                <% } else { %>
-                <a href="/?page=1"> Show less  </a>
-            <% } %>
-        </div>
-
-        <div class="listContainer">
-        <% for(let i=0; i<data.length; i++) { %>
-            <div class="todoContainer">
-                <div class="todos">  
-                    <span class="task"><%= data[i].name %> </span>
-                    <span class="date"><%= data[i].date.toString().split(" ").splice(0, 5) %> </span>
-                </div>
-                <div class="todoButtons">
-                    <a href="/edit/<%= data[i]._id %>">Edit</a> 
-                    <a href="/delete/<%= data[i]._id %>">Delete</a> 
-                </div>
-            </div>
+    <div class="orgLinks">
+        <a href="/?page=<%=(displayTodos/amountDisplayed)%>&&sorted=-1"> Sort Date (newest first) </a>
+        <a href="/?page=<%=(displayTodos/amountDisplayed)%>&&sorted=1"> Sort Date (oldest first) </a>
+        <% if(mathCeil !== displayTodos/amountDisplayed) { %>
+            <a href="/?page=<%=(displayTodos/amountDisplayed)+1%>"> Show more </a>
+            <% } else { %>
+            <a href="/?page=1"> Show less  </a>
         <% } %>
+    </div>
+
+    <div class="listContainer">
+     <% for(let i=0; i<data.length; i++) { %>
+        <div class="todoContainer">
+            <div class="todos">  
+                <span class="task"><%= data[i].name %> </span>
+                <span class="date"><%= data[i].date.toString().split(" ").splice(0, 5) %> </span>
+            </div>
+            <div class="todoButtons">
+                <a href="/edit/<%= data[i]._id %>">Edit</a> 
+                <a href="/delete/<%= data[i]._id %>">Delete</a> 
+            </div>
         </div>
+    <% } %>
+    </div>
     </section>
 </body>
 </html>
