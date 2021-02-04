@@ -1,10 +1,12 @@
 const express = require("express");
 const Todo = require("../model/todo");
+const postTodo = require("../controller/postTodoController");
 const router = express.Router();
+
+
 
 router.get("/", async (req, res) => {
   const sortName = +req.query.sorted || 1;
-  //const sortDate = +req.query.sortedDate || 1;
   const page = +req.query.page || 1;
 
   try {
@@ -12,8 +14,7 @@ router.get("/", async (req, res) => {
     const amountDisplayed = 4;
     const mathCeil = Math.ceil(toDoList / amountDisplayed);
     const displayTodos = amountDisplayed * page;
-    const data = await Todo.find().limit(displayTodos).sort({ name: sortName });
-    const data2 = await Todo.find().limit(displayTodos).sort({ date: sortName });
+    const data = await Todo.find().limit(displayTodos).sort({ date: sortName });
 
     res.render("index.ejs", {
       toDoList,
@@ -21,7 +22,6 @@ router.get("/", async (req, res) => {
       mathCeil,
       displayTodos,
       data,
-      data2,
       errors: "empty",
     });
   } catch (err) {
