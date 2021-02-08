@@ -16,8 +16,8 @@
     <%- include("add-data.ejs") %>
 
     <div class="orgLinks">
-        <a href="/?page=<%=(displayTodos/amountDisplayed)%>&&sorted=-1"> Sort Date (newest first) </a>
-        <a href="/?page=<%=(displayTodos/amountDisplayed)%>&&sorted=1"> Sort Date (oldest first) </a>
+        <a href="/?page=<%=(displayTodos/amountDisplayed)%>&&sort=-1"> Sort Date (newest first) </a>
+        <a href="/?page=<%=(displayTodos/amountDisplayed)%>&&sort=1"> Sort Date (oldest first) </a>
         <% if(mathCeil !== displayTodos/amountDisplayed) { %>
             <a href="/?page=<%=(displayTodos/amountDisplayed)+1%>"> Show more </a>
             <% } else { %>
